@@ -26,8 +26,12 @@
 			</div>
 			
 			<div class="right menu">
-				<a class="item">
-					<i class="alarm icon"></i>
+				<a class="ui pointing dropdown link item">
+					<i class="alarm icon" tabindex="0"></i>
+					<div class="menu" tabindex="-1">
+						<div class="item">Notife #1</div>
+						<div class="item">Notife #2</div>
+					</div>
 				</a>
 				
 				<div class="ui pointing dropdown link item" tabindex="-1">
@@ -46,7 +50,7 @@
 		
 		<div id="side" class="ui bottom attached segment pushable">
 			<div id="side_decider" class="ui black visible inverted right vertical sidebar menu">
-				<a class="item">
+				<a class="active item">
 					<i class="comments icon"></i>
 					Chat
 				</a>
@@ -55,7 +59,7 @@
 					Users
 				</a>
 				<a class="item">
-					<i class="film icon"></i>
+					<i style="active:true" class="film icon"></i>
 					Movies
 				</a>
 			</div>
