@@ -1,0 +1,20 @@
+#searchText {
+ width: 150px;
+ color: #0E434D;
+ transition: all 0.4s ease 0s;
+}
+#searchText:focus {
+ width: 250px;
+}
+#side{
+ float: right;
+}
+
+#side_decider{
+ float: right;
+ width: 200px;
+}
+
+#side_content{
+ float: right;
+}
