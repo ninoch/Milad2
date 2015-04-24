@@ -1,16 +1,21 @@
 
 #login_form{
 	position: absolute;
-    background-color: gray;
     opacity: 0.9;
     background-color: #D3D3D3;
 }
 
 #forget_pass{
 	position: absolute;
-    background-color: gray;
     opacity: 0.9;
     background-color: #D3D3D3;	
+}
+
+#sign_up{
+	opacity: 0.9;
+	background-color: #D3D3D3;
+	width: 600px;	
+	margin: 100px auto;
 }
 
 #flip_container{
@@ -23,6 +28,7 @@
 #flip_container, .front, .back {
 	width: 300px;
 }
+
 /*
 #flip_container:hover #fliper, #flip_container.hover #fliper {
 	transform: rotateY(180deg);
@@ -38,7 +44,8 @@
 	transform-style: preserve-3d;
 	position: relative;
 }
-.front, .back {
+.front, .back{
+	width: 300px;
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
