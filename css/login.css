@@ -1,11 +1,13 @@
 
 #login_form{
+	position: absolute;
     background-color: gray;
     opacity: 0.9;
     background-color: #D3D3D3;
 }
 
 #forget_pass{
+	position: absolute;
     background-color: gray;
     opacity: 0.9;
     background-color: #D3D3D3;	
@@ -21,10 +23,15 @@
 #flip_container, .front, .back {
 	width: 300px;
 }
-
+/*
 #flip_container:hover #fliper, #flip_container.hover #fliper {
 	transform: rotateY(180deg);
 }
+*/
+#flip_container:target #fliper {
+  transform: rotateY(180deg);
+}
+
 
 #fliper {
 	transition: 1.5s;
