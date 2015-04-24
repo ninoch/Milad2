@@ -1,0 +1,29 @@
+#login_form{
+	width: 300px;
+    margin: auto;
+    background-color: gray;
+    margin-top: 10%;
+    opacity: 0.9;
+    background-color: #D3D3D3;
+}
+
+/*disable scroll*/
+body, html{
+	overflow-x: hidden; 
+    overflow-y: auto;
+}
+body{
+	background-image: url("../img/watch-movie.jpg") ;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+#buttons{
+	/*margin-left: 35px;*/
+	margin-left: 15%;
+}
+
+#errors{
+	text-align: center;
+}
