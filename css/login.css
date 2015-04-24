@@ -1,11 +1,52 @@
+
 #login_form{
-	width: 300px;
-    margin: auto;
     background-color: gray;
-    margin-top: 10%;
     opacity: 0.9;
     background-color: #D3D3D3;
 }
+
+#forget_pass{
+    background-color: gray;
+    opacity: 0.9;
+    background-color: #D3D3D3;	
+}
+
+#flip_container{
+	/*position: relative;*/
+	margin: 100px auto;
+    z-index: 1;
+    perspective: 1000;
+}
+
+#flip_container, .front, .back {
+	width: 300px;
+}
+
+#flip_container:hover #fliper, #flip_container.hover #fliper {
+	transform: rotateY(180deg);
+}
+
+#fliper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
 
 /*disable scroll*/
 body, html{

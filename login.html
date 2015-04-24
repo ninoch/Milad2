@@ -14,34 +14,51 @@
 
 	</head>
 	<body>
-		<form id="login_form" class="ui form segment ">
-			<div class="field">
-			    <div class="field">
-			      <label for="Username">Username</label>
-			      <div class="ui icon input">
-			        <input id="Username" placeholder="Username" type="text">
-			        <i class="user icon"></i>
-			      </div>
-			    </div>
-			    <div class="field">
-			      <label for="Password">Password</label>
-			      <div class="ui icon input">
-			        <input id="Password" placeholder="Password" type="password">
-			        <i class="lock icon"></i>
-			      </div>
-			      <em><a href="">forget password?</a></em>
-			    </div>
+		<div id="flip_container">
+			<div id="fliper">
+				<form id="login_form" class="ui form segment face front">
+					<div class="field">
+					    <div class="field">
+					      <label for="Username">Username</label>
+					      <div class="ui icon input">
+					        <input id="Username" placeholder="Username" type="text">
+					        <i class="user icon"></i>
+					      </div>
+					    </div>
+					    <div class="field">
+					      <label for="Password">Password</label>
+					      <div class="ui icon input">
+					        <input id="Password" placeholder="Password" type="password">
+					        <i class="lock icon"></i>
+					      </div>
+					      <em><a id="link" href="">forget password?</a></em>
+					    </div>
+					</div>
+					<h4 class="ui dividing header"></h4>
+					<div id="errors" class="ui error">Errors will be here!</div>
+					<br/>
+					<div id="buttons" class="ui large buttons">
+					  <div class="ui green button">Login!</div>
+					  <div class="or"></div>
+					  <div class="ui red button">Sign Up</div>
+					</div>
+				</form>
+				<form id="forget_pass" class="ui form segment face back">
+					<div class="field">
+					    <label for="Email">Email</label>
+					    <div class="ui icon input">
+					        <input id="Email" placeholder="Email" type="text">
+					        <i class="user icon"></i>
+					    </div>
+					</div>
+					<div id="buttons" class="ui large buttons">
+					  <div class="ui teal button">Back</div>
+					  <div class="or"></div>
+					  <div class="ui green button">Reset</div>
+					</div>
+				</form>
 			</div>
-			<h4 class="ui dividing header"></h4>
-			<div id="errors" class="ui error">Errors will be here!</div>
-			<br/>
-			<div id="buttons" class="ui large buttons">
-			  <div class="ui green button">Login!</div>
-			  <div class="or"></div>
-			  <div class="ui red button">Sign Up</div>
-			</div>
-			
-		</form>
+		</div>
 	</body>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
