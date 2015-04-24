@@ -14,7 +14,7 @@
 
 	</head>
 	<body>
-		<div class="ui inverted menu">
+		<div class="ui my inverted menu">
 			<a class="item">
 				<i class="home icon"></i> Home
 			</a>
@@ -22,7 +22,7 @@
 			<div class="ui action left icon input">
 				<i class="search icon"></i>
 				<input id="searchText" type="text" placeholder="Search...">
-				<div class="ui blue button">Search</div>
+				<div class="ui teal button">Search</div>
 			</div>
 			
 			<div class="right menu">
@@ -44,26 +44,44 @@
 						<div class="item">Logout</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 		
+		
 		<div id="side" class="ui bottom attached segment pushable">
-			<div id="side_decider" class="ui black visible inverted right vertical sidebar menu">
-				<a class="active item">
-					<i class="comments icon"></i>
-					Chat
-				</a>
-				<a class="item">
-					<i class="users icon"></i>
-					Users
-				</a>
-				<a class="item">
-					<i style="active:true" class="film icon"></i>
-					Movies
-				</a>
+			<div id="menu_decider" class="ui top inverted attached demo menu">
+			    <a class="item">
+			      <i class="sidebar icon"></i>
+			      Menu
+			    </a>
+			</div>
+			<div  class="ui bottom attached segment">
+			    <div id="decider" class="ui inverted labeled icon right inline vertical sidebar menu">
+			      	<a class="active item">
+						<i class="comments icon"></i>
+						Chat
+					</a>
+					<a class="item">
+						<i class="users icon"></i>
+						Users
+					</a>
+					<a class="item">
+						<i style="active:true" class="film icon"></i>
+						Movies
+					</a>
+			    </div>
+			    <div id="content" class="pusher">
+					<div class="ui basic segment">
+						<h3 class="ui header">Application Content</h3>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+			    </div>
 			</div>
 		</div>
+		
 
 		
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
@@ -71,6 +89,15 @@
 		<script src="lib/Semantic/dist/semantic.js"></script>
 		<script>
 			$('.ui.dropdown').dropdown();
+		</script>
+		<script>
+			// showing multiple
+			$('.ui.sidebar')
+			  .sidebar({
+			    context: $('.bottom.segment')
+			  })
+			  .sidebar('attach events', '.menu .item')
+			;
 		</script>
 		
 	</body>
