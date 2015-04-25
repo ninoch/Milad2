@@ -15,9 +15,9 @@
 	</head>
 	<body>
 		<div class="container"> 
-		    <form id="sign_up" class="ui form segment face">
+		    <div id="sign_up" class="ui form segment">
 				<h1>Register Now</h1>
-			  	<div class="ui form segment">   
+			  	<form class="ui form segment">   
 				    <div class="two fields">
 				      <div class="field">
 				        <label for="FirstName">First Name</label>
@@ -31,19 +31,20 @@
 				    </div>
 				    <div class="field">
 					    <label>Gender</label>
-					    <div class="ui selection dropdown">
-					      <div class="default text">Select Gender</div>
-					      <i class="dropdown icon"></i>
-					      <input name="gender" type="hidden">
-					      <div class="menu">
-					        <div class="item" data-value="male">Male</div>
-					        <div class="item" data-value="female">Female</div>
-					      </div>
-					    </div>
+				      	<div class="ui fluid selection dropdown">
+					        <input name="gender" type="hidden">
+					        <div class="default text">Gender</div>
+					        <i class="dropdown icon"></i>
+					        <div class="menu">
+					          	<div class="item" data-value="1">Male</div>
+					          	<div class="item" data-value="0">Female</div>
+					        </div>
+				      	</div>
 					</div>
-					<div class = "field">
-						<label>Birth</label>
-						<input class='date-entry field' placeholder='xx/xx/xxxx'>
+					<div id="calender" class = "required field">
+						<label>Birth Date</label>
+						<input class='date-entry field' placeholder='DD/MM/YYYY'>
+					    <!--
 					    <div class='ui button'>
 					      <i class='calendar icon'></i>
 					    </div>
@@ -175,6 +176,7 @@
 					        </div>
 					      </div>
 					    </div>
+					    -->
 					</div>
 				    <div class="required field">
 				      <label for="Email">Email</label>
@@ -187,79 +189,89 @@
 				    </div>
 
 				    <div class="required field">
-				      <label for="Password">Password</label>
-				      <input id="Password" type="password">
+				      <label for="password">Password</label>
+				      <input id="password" type="password">
 				    </div>
 
 				    <div class="required field">
-				      <label for="PasswordConfirm">Password Confirm</label>
-				      <input id="PasswordConfirm" type="password">
+				      <label for="passwordConfirm">Password Confirm</label>
+				      <input id="passwordConfirm" type="password">
 				    </div>
 
 				    <button class="ui teal button">Sign Up!</button>
-			  	</div>  
-			</form>
+				    <div class="ui error message"></div>
+			  	</form>  
+			</div>
 		</div>	
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+		<script src="lib/Semantic/dist/semantic.js"></script>
 		<script>
 			$('.ui.dropdown').dropdown();
-		</script>	
+		</script>
 		<script>
-		/*
-		  (function ($) {
-		    $('.ui.form').form({        
-		      givenName: {
-		        identifier: 'GivenName',
+		(function ($) {$('.ui.form')
+		  .form({
+		    FirstName: {
+		      identifier  : 'FirstName',
+		      rules: [
+		        {
+		          type   : 'empty',
+		          prompt : 'Please enter your first name'
+		        }
+		      ]
+		    },
+		    LastName: {
+		      identifier  : 'LastName',
+		      rules: [
+		        {
+		          type   : 'empty',
+		          prompt : 'Please enter your last name'
+		        }
+		      ]
+		    },
+		    gender: {
+		      identifier  : 'gender',
+		      rules: [
+		        {
+		          type   : 'empty',
+		          prompt : 'Please select a gender'
+		        }
+		      ]
+		    },
+		    password: {
+		      identifier : 'password',
+		      rules: [
+		        {
+		          type   : 'empty',
+		          prompt : 'Please enter a password'
+		        },
+		        {
+		          type   : 'length[6]',
+		          prompt : 'Your password must be at least 6 characters'
+		        }
+		      ]
+		    },
+		    passwordConfirm: {
+		        identifier: 'passwordConfirm',
 		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter your given name'
-		        }]
-		      },       
-		      surname: {
-		        identifier: 'Surname',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter your surname'
-		        }]
-		      },       
-		      username: {
-		        identifier: 'Username',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter a username'
-		        }]
-		      },       
-		      email: {
-		        identifier: 'Email',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter your email'
-		        },{
-		          type: 'email',
-		          prompt: 'Please enter a valid email'
-		        }]
-		      },       
-		      password: {
-		        identifier: 'Password',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter a password'
-		        },{
-		          type: 'length[6]',
-		          prompt: 'Password needs to be atleast 6 characters long'
-		        }]
-		      },       
-		      passwordConfirm: {
-		        identifier: 'PasswordConfirm',
-		        rules: [{
-		          type: 'match[Password]',
+		          type: 'match[password]',
 		          prompt: 'Password don\'t match'
 		        }]
-		      }
-		    }, {
-		      on: 'blur',
-		      inline: 'true'
-		    });
-		  }(jQuery));*/
+		    },
+		    /*
+		    terms: {
+		      identifier : 'terms',
+		      rules: [
+		        {
+		          type   : 'checked',
+		          prompt : 'You must agree to the terms and conditions'
+		        }
+		      ]
+		    }
+		    */
+		  });
+		}(jQuery));
 		</script>
 	</body>
 </html>
